@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisyarat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Bisyarat" class="logo" />
+            <span class="brand-text">Bisyarat</span>
+        </a>
+        <ul class="nav-links">
+            <li></li>
+        </ul>
+    </nav>
+
+    <section class="camera-section">
+        <div class="camera-container">
+            <div class="camera-preview">
+                <div id="camera-placeholder" class="camera-placeholder"></div>
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id ="landmark-canvas"></canvas>
+                <canvas id="snapshot-canvas" style="display: none; position: absolute; top: 0; left: 0;"></canvas>
+                <button id="close-preview">X</button>
+            </div>
+
+            <div class="camera-info">
+                <h2>Prediksi Gerakan</h2>
+                <p>Pastikan keypoints pada kamera terdeteksi<br>
+                    Sistem akan secara otomatis melakukan prediksi gerakan BISINDO ketika anda menekan tombol Ambil Gambar.
+                    Untuk huruf menggunakan satu tangan, harap gunakan tangan kanan<br>
+                </p>
+                <div class="camera-info-description">Tekan tombol X pada kamera untuk mencoba ulang<br>
+                Pastikan gerakan tangan sudah sesuai
+
+                <div class="huruf-section">
+                    <p class="huruf-label">Pilih huruf yang ingin diprediksi:</p>
+                    <div class="huruf-buttons">
+                        <button class="huruf-btn">A</button>
+                        <button class="huruf-btn">I</button>
+                        <button class="huruf-btn">U</button>
+                        <button class="huruf-btn">E</button>
+                        <button class="huruf-btn">O</button>
+                    </div>
+                </div>
+
+                <div class="hasil-section">
+                    <p class="hasil-label">Hasil prediksi:</p>
+                    <div class="hasil-buttons">
+                        <button class="huruf-btn">A</button>
+                        <button class="huruf-btn">I</button>
+                        <button class="huruf-btn">U</button>
+                        <button class="huruf-btn">E</button>
+                        <button class="huruf-btn">O</button>
+                    </div>
+                </div>
+
+                <div id="countdown-text"></div>
+
+                <div class="button-group">
+                    <button id="toggle-camera" class="btn-start">Buka Kamera</button>
+                    <button id="capture-photo" class="btn-capture">Ambil Gambar</button>
+                    <a href="{{ url_for('index') }}" id="back-button">Selesai</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.min.js"></script>
+    <script src="{{ url_for('static', filename='js/prediksi.js') }}"></script>
+</body>
+</html>

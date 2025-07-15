@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bisyarat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="{{ url_for('index') }}" class="brand">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Bisyarat" class="logo" />
+      <span class="brand-text">Bisyarat</span>
+    </a>
+    <ul class="nav-links">
+      <li></li>
+    </ul>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text"> 
+        <p class="subtext">Mau Mencoba Bahasa Isyarat?</p>
+        <h1>
+          Yuk kita coba <br />
+          gerakan <br />
+          BISINDO <br />
+          Bandung 
+        </h1>
+        <a href="#divider-1" class="cta-lihat-video-button">Lihat Gerakan</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/hero-img.png') }}" alt="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" id="divider-1">
+    <img src="{{ url_for('static', filename='images/icon 1.png')}}" alt="icon_1">
+  </div>
+
+  <div class="text-description">
+    <p>Gerakan dibawah ini merupakan contoh gerakan BISINDO untuk huruf vokal</br>
+        Anda dapat menggeser video menggunakan tombol yang ada maupun menggeser sesuai huruf vokal yang diinginkan
+    </p>
+  </div>
+
+  <div class="section-divider" id="divider-2">
+    <div id="videoLabelBox">A</div>
+  </div>
+
+<section class="video-grid-section">
+
+  <div class="video-wrapper">
+    <button class="arrow-btn left" id="prevArrow">&lt;</button>
+
+    <div class="video-scroll-container" id="videoScroll">
+      <div class="video-item">
+          <video controls width="350" height="300">
+            <source src="{{ url_for('static', filename='videos/Bisindo A.mp4') }}" type="video/mp4">
+            Browser tidak mendukung video.
+          </video>
+      </div>
+      <div class="video-item">
+          <video controls width="350" height="300">
+            <source src="{{ url_for('static', filename='videos/Bisindo I.mp4') }}" type="video/mp4">
+            Browser tidak mendukung video.
+          </video>
+      </div>
+      <div class="video-item">
+          <video controls width="350" height="300">
+            <source src="{{ url_for('static', filename='videos/Bisindo U.mp4') }}" type="video/mp4">
+            Browser tidak mendukung video.
+          </video>
+      </div>
+      <div class="video-item">
+          <video controls width="350" height="300">
+            <source src="{{ url_for('static', filename='videos/Bisindo E.mp4') }}" type="video/mp4">
+            Browser tidak mendukung video.
+          </video>
+      </div>
+      <div class="video-item">
+          <video controls width="350" height="300">
+            <source src="{{ url_for('static', filename='videos/Bisindo O.mp4') }}" type="video/mp4">
+            Browser tidak mendukung video.
+          </video>
+      </div>
+    </div>
+
+    <button class="arrow-btn right" id="nextArrow">&gt;</button>
+  </div>
+
+  <div class="video-pagination-dots" id="videoDots"></div>
+  <a href="{{ url_for('prediksi') }}" class="prediksi-button">Coba Prediksi</a>
+</section>
+
+  <div class="section-divider">
+    <img src="{{ url_for('static', filename='images/icon 1.png')}}" alt="icon_1">
+  </div>
+
+  <section class="footer-section">
+    <div class="footer-container">
+      <div class="footer-text">
+        <h1 class="footer-heading">BISINDO Bandung</h1>
+        <p class="footer-description">
+          Bahasa Isyarat Indonesia (BISINDO) yang digunakan oleh komunitas Tuli di Bandung. <br />
+          BISINDO sendiri adalah bahasa isyarat alami yang berkembang 
+          di kalangan komunitas Tuli di Indonesia dan memiliki variasi 
+          regional tergantung pada daerahnya.
+        </p>
+      </div>
+      <div class="footer-copyright">
+        Copyright Bisyarat 2025
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal-prediksi">
+    <div class="modal-content">
+      <span class="close-button" id="close-modal">&times;</span>
+      <h2>Apakah Anda Mengizinkan Akses Kamera?</h2>
+
+      <div class="modal-button">
+        <button id="confirm-yes" class="modal-btn-yes">Ya</button>
+        <button id="confirm-no" class="modal-btn-no">Tidak</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
