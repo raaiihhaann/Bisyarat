@@ -1,7 +1,6 @@
-tensorflow
+tensorflow-cpu
 numpy
 opencv-python
 mediapipe
 flask
 gunicorn
-uvicorn
