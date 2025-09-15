@@ -15,8 +15,9 @@ def prediksi():
 
 @app.route('/predict', methods=['POST'])
 def predict_api():
+    from model.predict import predict_letter  
     data = request.get_json()
-
+    
     start_time = time.time()
     result = predict_letter(data.get('keypoints'))
     end_time = time.time()
